@@ -77,7 +77,6 @@ app.get("/animalEmPista", async (req, res) => {
 });
 
 // Gerar Ranking Femea Morfologia
-// https://ws01.cavalocrioulo.org.br/wsrest/jfrmservices/evt/ranking/25565/FEMEA/MORFOLOGIA
 app.get("/ranking", async (req, res) => {
   const url =
     "https://ws01.cavalocrioulo.org.br/wsrest/jfrmservices/evt/ranking";
