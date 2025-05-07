@@ -35,7 +35,7 @@ app.get("/notasJurados", async (req, res) => {
 
     const xmlDataResponse = fs.readFileSync(caminhoArquivo, "utf8");
     res.type("application/xml").send(xmlDataResponse);
-    
+
   } catch (error) {
     console.error("Erro ao baixar o XML:", error.message);
     res.status(500).send("Erro ao baixar ou salvar o XML.");
@@ -66,7 +66,10 @@ app.get("/animalEmPista", async (req, res) => {
 
     fs.writeFileSync(caminhoArquivo, xmlData, "utf8");
 
-    res.status(200).send("XML baixado e salvo com sucesso.");
+    // res.status(200).send("XML baixado e salvo com sucesso.");
+    const xmlDataResponse = fs.readFileSync(caminhoArquivo, "utf8");
+    res.type("application/xml").send(xmlDataResponse);
+
   } catch (error) {
     console.error("Erro ao baixar o XML:", error.message);
     res.status(500).send("Erro ao baixar ou salvar o XML.");
@@ -100,7 +103,10 @@ app.get("/ranking", async (req, res) => {
 
     fs.writeFileSync(caminhoArquivo, xmlData, "utf8");
 
-    res.status(200).send("XML baixado e salvo com sucesso.");
+    const xmlDataResponse = fs.readFileSync(caminhoArquivo, "utf8");
+    res.type("application/xml").send(xmlDataResponse);
+
+    // res.status(200).send("XML baixado e salvo com sucesso.");
   } catch (error) {
     console.error("Erro ao baixar o XML:", error.message);
     res.status(500).send("Erro ao baixar ou salvar o XML.");
